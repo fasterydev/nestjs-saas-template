@@ -7,7 +7,6 @@ interface EnvVars {
   DATABASE_URL: string;
   API_PREFIX: string;
   STAGE: string;
-  JWT_SECRET: string;
 }
 
 const envsSchema = joi
@@ -16,7 +15,6 @@ const envsSchema = joi
     DATABASE_URL: joi.string().uri().required(),
     API_PREFIX: joi.string().required(),
     STAGE: joi.string().required(),
-    JWT_SECRET: joi.string().required(),
   })
   .unknown(true);
 
@@ -33,5 +31,4 @@ export const envs = {
   dbUrl: envVars.DATABASE_URL,
   apiPrefix: envVars.API_PREFIX,
   stage: envVars.STAGE,
-  jwtSecret: envVars.JWT_SECRET,
 };

@@ -5,8 +5,7 @@ API backend SaaS construida con NestJS, diseñada para aplicaciones modernas que
 ## 🚀 Características
 
 ### Autenticación Multi-Estrategia
-- **JWT (JSON Web Tokens)**: Autenticación estándar con tokens Bearer
-- **Clerk Integration**: Integración completa con Clerk para autenticación gestionada
+- **Clerk**: Integración completa con Clerk para autenticación gestionada
 - **API Keys**: Autenticación mediante API Keys para servicios y aplicaciones
 
 ### Funcionalidades Principales
@@ -28,11 +27,7 @@ API backend SaaS construida con NestJS, diseñada para aplicaciones modernas que
 - **Lenguaje**: TypeScript
 - **Base de Datos**: PostgreSQL
 - **ORM**: TypeORM
-- **Autenticación**: 
-  - Passport.js
-  - JWT
-  - Clerk
-  - API Keys
+- **Autenticación**: Passport.js, Clerk, API Keys
 - **Validación**: class-validator, class-transformer
 - **Documentación**: Swagger/OpenAPI
 - **Testing**: Jest
@@ -74,9 +69,6 @@ STAGE=development
 # Base de Datos
 DATABASE_URL=postgresql://usuario:password@localhost:5432/nombre_db
 
-# JWT
-JWT_SECRET=tu_secreto_jwt_super_seguro
-
 # Clerk (Opcional)
 CLERK_SECRET_KEY=tu_clerk_secret_key
 ```
@@ -89,7 +81,6 @@ CLERK_SECRET_KEY=tu_clerk_secret_key
 | `DATABASE_URL` | URL de conexión a PostgreSQL | ✅ |
 | `API_PREFIX` | Prefijo para las rutas de la API | ✅ |
 | `STAGE` | Entorno (development/production) | ✅ |
-| `JWT_SECRET` | Secreto para firmar tokens JWT | ✅ |
 | `CLERK_SECRET_KEY` | Clave secreta de Clerk | ⚠️ Solo si usas Clerk |
 
 ## 🚦 Uso
@@ -211,7 +202,6 @@ src/
 | `npm run start:debug` | Inicia en modo debug |
 | `npm run start:prod` | Inicia en modo producción |
 | `npm run lint` | Ejecuta el linter y corrige errores |
-| `npm run format` | Formatea el código con Prettier |
 | `npm run test` | Ejecuta las pruebas unitarias |
 | `npm run test:watch` | Ejecuta pruebas en modo watch |
 | `npm run test:cov` | Genera reporte de cobertura |
