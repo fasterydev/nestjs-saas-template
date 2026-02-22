@@ -63,7 +63,6 @@ Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
 ```env
 # Servidor
 PORT=4000
-API_PREFIX=api
 STAGE=development
 
 # Base de Datos
@@ -79,7 +78,6 @@ CLERK_SECRET_KEY=tu_clerk_secret_key
 |----------|-------------|-----------|
 | `PORT` | Puerto del servidor | ✅ |
 | `DATABASE_URL` | URL de conexión a PostgreSQL | ✅ |
-| `API_PREFIX` | Prefijo para las rutas de la API | ✅ |
 | `STAGE` | Entorno (development/production) | ✅ |
 | `CLERK_SECRET_KEY` | Clave secreta de Clerk | ⚠️ Solo si usas Clerk |
 

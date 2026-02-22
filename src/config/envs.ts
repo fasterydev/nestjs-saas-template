@@ -5,7 +5,6 @@ import * as joi from 'joi';
 interface EnvVars {
   PORT: number;
   DATABASE_URL: string;
-  API_PREFIX: string;
   STAGE: string;
 }
 
@@ -13,7 +12,6 @@ const envsSchema = joi
   .object({
     PORT: joi.number().required(),
     DATABASE_URL: joi.string().uri().required(),
-    API_PREFIX: joi.string().required(),
     STAGE: joi.string().required(),
   })
   .unknown(true);
@@ -29,6 +27,5 @@ const envVars: EnvVars = value;
 export const envs = {
   port: envVars.PORT,
   dbUrl: envVars.DATABASE_URL,
-  apiPrefix: envVars.API_PREFIX,
   stage: envVars.STAGE,
 };

@@ -13,10 +13,6 @@ async function bootstrap() {
       logger: ['error', 'warn', 'log', 'debug', 'verbose'],
     });
 
-    // Configurar prefijo global de la API
-    app.setGlobalPrefix(envs.apiPrefix);
-    logger.log(`📌 Prefijo de API configurado: /${envs.apiPrefix}`);
-
     // Configurar validación global
     app.useGlobalPipes(
       new ValidationPipe({
@@ -48,7 +44,7 @@ async function bootstrap() {
     logger.log('═══════════════════════════════════════════════════════════');
     logger.log(`✅ Aplicación iniciada correctamente`);
     logger.log(`📡 Servidor corriendo en: http://localhost:${port}`);
-    logger.log(`🔗 API disponible en: http://localhost:${port}/${envs.apiPrefix}`);
+    logger.log(`🔗 API disponible en: http://localhost:${port}`);
     logger.log(`🌍 Entorno: ${envs.stage}`);
     logger.log(`📅 ${new Date().toLocaleString('es-ES', { timeZone: 'America/Santiago' })}`);
     logger.log('═══════════════════════════════════════════════════════════');
